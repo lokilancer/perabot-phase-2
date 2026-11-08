@@ -1,30 +1,24 @@
-Category,Component,Quantity,Status,Compatibility / buying notes
-Controller,ESP32-S3 N16R8 development board,1,Selected,Use 3.3V GPIO; verify exact board pinout and available pins
-Drive,GA12-N20 encoder gear motor,2,Buy after verification,Confirm rated voltage stall current RPM encoder voltage and output type
-Drive,TB6612FNG dual motor driver,1,Buy after motor verification,For two drive motors only; check stall current against driver rating
-Drive,Wheels with matching motor-shaft hubs,2,To buy,Confirm shaft diameter and hub fit; tyres alone may not include hubs
-Drive,Ball caster,1,On original list,Check height and mounting
-Line sensing,QTR-8RC reflectance array,2,Planned,16 channels total; plan GPIO use and mounting height
-Distance sensing,VL53L0X module,1,Planned,Check breakout voltage and I2C compatibility
-Distance sensing,HC-SR04 module,1,Planned,Echo output needs a 3.3V-safe divider or level shifter
-Colour sensing,TCS3200 module,1,Planned,Check module output voltage and GPIO requirements
-Orientation,MPU6050 module,1,Planned,I2C; check breakout voltage compatibility
-Power,2S 7.4V 1550mAh LiPo,1,On original list,Confirm discharge rating and connector after load estimate
-Power,LM2596 buck converter,1,On original list,Set and measure output before connecting electronics
-Power,2S LiPo balance charger,1,On original list,Must explicitly support 2-cell LiPo
-Power,2S low-voltage alarm,1,On original list,Confirm 2S compatibility
-Power,Main power switch,1,On original list,Check current rating
-Power,Fuse and holder,1,Missing,Select rating after estimating maximum current
-Power,Battery connector and matching pigtail,1,Missing,Match battery connector and current rating
-Power,Power distribution board or terminal block,1,Missing,Organize motor and logic power branches
-Logic protection,HC-SR04 Echo divider or level shifter,1,Missing,Protect ESP32-S3 input from 5V Echo signal
-Wiring,Perfboard or PCB and headers,1,Missing,Secure mounting for modules
-Wiring,Motor encoder and sensor connectors/wire,1,Missing,Choose suitable wire and connector sizes
-Chassis,Base plate material,1 set,Missing,Concept model base is 180 x 150 mm; confirm actual layout
-Chassis,Motor brackets or clamps,2,Missing,Adjust after measuring exact motors
-Chassis,Sensor mounting brackets,1 set,Missing,Adjustable sensor height and position
-Chassis,M3 screws nuts washers and standoffs,1 set,Partly on original list,Check lengths and quantities
-Chassis,Wheel hubs and fasteners,2,Missing,Match motor shaft and wheels
-Future mechanism,Third motor and suitable driver,0,Deferred,Choose only after challenge/mechanism is announced
-Future mechanism,Mechanism mount/linkage,0,Deferred,Reserve mounting space; do not drill final holes yet
-Tools,Multimeter/tester,1,On original list,Verify voltage and continuity before connecting
+Priority,Category,Component,Quantity,Status,Reason / verification before purchase
+Essential,Controller,ESP32-S3 N16R8 development board,1,Selected,Confirm exact board pinout and 3.3V GPIO availability
+Essential,Drive,Encoder gear motor compatible with chassis,2,Buy after verification,Confirm GA12-N20 rated voltage RPM stall current encoder voltage/output and shaft size
+Essential,Drive,TB6612FNG dual motor driver,1,Buy after verification,For two drive motors only; verify motor stall current and supply voltage against driver limits
+Essential,Drive,Matching wheels and motor-shaft hubs,2,To buy,Confirm tyre diameter hub bore and shaft fit; tyres may not include hubs
+Essential,Line sensing,QTR-8RC reflectance array,1,Recommended starting configuration,Eight channels for line position and junction detection; test coverage and mounting height on actual track
+Essential,Obstacle sensing,VL53L0X distance module,1,Preferred initial option,Test reliable detection and stopping clearance against competition obstacles; verify breakout voltage
+Essential,Colour sensing,TCS3200 colour module,1,Planned,Mount downward/front; calibrate red and blue patches; verify output voltage and GPIO requirements
+Essential,Power,2S 7.4V LiPo battery,1,Conditional,Confirm motor voltage and battery discharge rating against measured/estimated load before purchase
+Essential,Power,2S balance charger,1,Conditional,Must explicitly support 2-cell LiPo and matching connector
+Essential,Power,Regulator suitable for controller and sensors,1,Review LM2596,Set and measure output; check current capacity and noise before connecting
+Essential,Power,Main switch and fuse/holder,1 each,Missing,Choose current rating after load estimate; fuse near battery
+Essential,Power,Battery connector and power distribution,1 set,Missing,Match battery connector and separate motor/logic power branches
+Essential,Chassis,Base plate and motor mounts,1 set,To fabricate,Use measured dimensions; keep complete robot within 200 x 200 x 200 mm
+Essential,Chassis,Sensor brackets and fasteners,1 set,To fabricate,Allow adjustable line array height and downward colour-sensor position
+Essential,Wiring,Wire connectors headers and mounting board,1 set,Missing,Secure connections and plan GPIO before soldering
+Recommended,Drive,Encoder feedback wiring/interfaces,2 sets,Verify with motors,Use 3.3V-safe encoder signals; needed for more repeatable reverse and turning
+Optional,Line sensing,Second QTR-8RC array,1,Optional — do not buy yet,Only add if one array fails track coverage tests and GPIO budget permits
+Optional,Obstacle sensing,HC-SR04 ultrasonic module,1,Optional alternative/backup,Not required if VL53L0X performs reliably; Echo must be level-shifted/divided to 3.3V
+Optional,Orientation,MPU6050 IMU,1,Optional,Rulebook does not require it; add only if testing demonstrates benefit
+Optional,Drive,Ball caster,1,Check fit,Check mounting height and ground clearance with chosen wheels
+Deferred,Future mechanism,Third motor and driver,0,Deferred,No third motor is specified in the rulebook; wait for Final Round Challenge Guide
+Deferred,Future mechanism,Mechanism mount/linkage,0,Reserved space only,Keep modular mounting area; do not finalize holes until challenge is known
+Tools,Testing,Multimeter/tester,1,On original list,Verify voltage polarity continuity and regulator output before connecting
