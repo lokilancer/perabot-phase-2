@@ -57,3 +57,8 @@ The rulebook says the physical final may combine line following, complex navigat
 ## Budget note
 
 Do not treat earlier totals as a final budget. The ESP32-S3 replacement price, optional sensors, protection/wiring parts and supplier prices need current quotations. The second QTR array, HC-SR04 and MPU6050 are now optional pending tests; the third motor and its driver remain deferred.
+
+
+## Electronics design files
+
+The proposed controller-board architecture, component notes, PCB requirements, wiring template and SVG system diagram are in [Phase2/Electronics](Electronics/README.md). These are planning documents; verify exact board, motor, sensor and power specifications before PCB fabrication.
